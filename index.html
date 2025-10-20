@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social Connect</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- تحميل مكتبة Supabase أولاً -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+    <!-- شاشة التسجيل -->
+    <div id="authScreen" class="screen">
+        <div class="auth-container">
+            <h1>🚀 Social Connect</h1>
+            <p>تواصل مع أصدقائك بسهولة</p>
+            <button id="googleLogin" class="google-btn">
+                <span>🔗 تسجيل بحساب Google</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- الشاشة الرئيسية -->
+    <div id="mainScreen" class="screen hidden">
+        <!-- الهيدر -->
+        <header class="header">
+            <div class="user-info">
+                <img id="userAvatar" src="" alt="Profile" class="avatar">
+                <span id="userName"></span>
+            </div>
+            <button id="logoutBtn" class="logout-btn">تسجيل خروج</button>
+        </header>
+
+        <!-- البحث -->
+        <div class="search-section">
+            <input type="email" id="searchInput" placeholder="ابحث بالبريد الإلكتروني...">
+            <button id="searchBtn">بحث</button>
+        </div>
+
+        <!-- قائمة المحادثات -->
+        <div class="conversations-list">
+            <h3>📨 المحادثات</h3>
+            <div id="conversationsContainer"></div>
+        </div>
+
+        <!-- نافذة المحادثة -->
+        <div id="chatModal" class="modal hidden">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 id="chatWithUser"></h3>
+                    <button id="closeChat">&times;</button>
+                </div>
+                <div id="messagesContainer" class="messages-container"></div>
+                <div class="message-input">
+                    <input type="text" id="messageInput" placeholder="اكتب رسالتك...">
+                    <button id="sendMessageBtn">إرسال</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- تحميل script.js بعد كل شيء -->
+    <script src="script.js"></script>
+</body>
+</html>
